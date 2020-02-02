@@ -3,6 +3,7 @@ import { RecentSalesView } from './views/recent-sales';
 import { TopSalesView } from './views/top-sales';
 import { SplashModal } from './widgets/splash-modal';
 import { Sidebar } from './views/sidebar';
+import { Header } from './views/header';
 
 interface State {
 	mode: 'top' | 'recent';
@@ -14,24 +15,27 @@ export class DashboardApplication extends React.Component<{}, State> {
 		mode: 'top',
 		splash: true
 	}
+
 	componentDidMount() {
 		// initialize services
 		// ...
 	}
+
 	render() {
+		const { splash, mode } = this.state;
+
 		return (
 			<>
 				<Sidebar />
 				<div className="main">
-					<h1>Dashify</h1>
-					{this.state.mode === 'recent' ?
-						<RecentSalesView />
-						: <TopSalesView />
+					<Header />
+
+					{mode === 'recent' 
+							? <RecentSalesView />
+							: <TopSalesView />
 					}
-					{this.state.splash ?
-						<SplashModal />
-						: null
-					}
+
+					{splash && <SplashModal />}
 				</div>
 			</>
 		)

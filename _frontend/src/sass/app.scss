@@ -1,15 +1,18 @@
-/**
- * Core
- * ============================================================ */
-
 @charset "UTF-8";
 
 // Dependencies
 @import "reset";
 @import "variables";
+@import "mixins/helpers";
+@import "mixins/mq";
+
+// App
+@import "table";
 @import "main";
 @import "sidebar";
 
+
+// Basic
 html {
 	height: 100%;
 	font-size: 10px;
@@ -29,7 +32,27 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
 }
+
 .app {
 	display: flex;
 	height: 100%;
+}
+
+.button {
+  border: 1px solid $grey;
+  border-radius: 4rem;
+  color: $black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 1.8;
+  padding: .5rem 2rem .7rem;
+  text-decoration: none;
+  vertical-align: baseline;
+  white-space: nowrap;
+  background-color: $grey;
+	outline: 0;
 }
