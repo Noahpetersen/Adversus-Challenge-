@@ -4,6 +4,7 @@
   margin-bottom: 2rem;
   background-color: #fff;
   border-radius: .4rem;
+  @include shadow('medium');
 }
 .table > thead > tr,
 .table > tbody > tr,
@@ -27,8 +28,8 @@
   transition: all 0.3s ease;
 }
 .table > thead > tr > th {
-  font-weight: 400;
   color: #757575;
+  font-weight: 500;
   vertical-align: bottom;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
