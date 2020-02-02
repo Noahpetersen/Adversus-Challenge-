@@ -24,7 +24,7 @@ class SalesEventListener {
 
 	connect();
 
-// Register a callback function taking one argument (i.e. the event)
+	// Register a callback function taking one argument (i.e. the event)
 	registerSalesEventListener(callback);
 }
 ```
