@@ -16,7 +16,7 @@ We will assume that the frontend application is always running, and pretend that
 This task will be implemented against a mock library for handling such a web-socket.
 
 The library has the following interface:
-```
+```javascript
 class SalesEventListener {
 /**
 	Connect to the backend API
@@ -30,7 +30,7 @@ class SalesEventListener {
 ```
 
 The salesEventListener function will receive events which has the following form
-```
+```javascript
 {
 	type: 'sale', // this is the only type of event we're concerned with
 	userId: 1, // the user who made the sale
@@ -39,7 +39,7 @@ The salesEventListener function will receive events which has the following form
 }
 ```
 There is furthermore an interface available which has two function for retrieving meta-data about users and products
-```
+```javascript
 class EntityStore {
 	getUser(id)
 	getProduct(id)
@@ -47,7 +47,7 @@ class EntityStore {
 ```
 A user object has the following form
 
-```
+```javascript
 {
 	type: 'user',
 	id: 1,
@@ -57,7 +57,7 @@ A user object has the following form
 
 and a product object has the following form
 
-```
+```javascript
 {
 	type: 'product',
 	id: 1,
@@ -92,7 +92,7 @@ Suppose we have the following meta-data
 
 Users:
 
-```
+```javascript
 [{
 	type: 'user',
 	id: 1,
@@ -110,13 +110,12 @@ Users:
 
 Products:
 
-```
+```javascript
 [{
 	type: 'product',
 	id: 1,
 	name: 'Cats and their secret hobbies',
 	unitPrice: 79.99
-
 },{
 	type: 'product',
 	id: 1,
@@ -136,7 +135,7 @@ Products:
 ```
 
 And then suppose we have received the following events:
-```
+```javascript
 [{
 	type: 'sale',
 	userId: 1,
