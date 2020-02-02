@@ -1,0 +1,53 @@
+{
+	"name": "adversus-coding-challenge-2020",
+	"version": "1.0.0",
+	"description": "Adversus Coding Challenge",
+	"repository": "/",
+	"main": "Gulpfile.js",
+	"devDependencies": {
+		"@types/webpack-env": "^1.13.6",
+		"@typescript-eslint/eslint-plugin": "^1.11.0",
+		"@typescript-eslint/parser": "^1.11.0",
+		"awesome-typescript-loader": "^5.2.1",
+		"eslint": "^6.0.1",
+		"eslint-plugin-react": "^7.14.2",
+		"gulp": "^3.9.1",
+		"gulp-livereload": "^3.8.1",
+		"gulp-plumber": "^1.2.0",
+		"gulp-sass": "^4.0.1",
+		"gulp-sourcemaps": "^2.6.4",
+		"typescript": "^3.7.3",
+		"webpack": "^4.41.5",
+		"webpack-cli": "^3.1.0",
+		"webpack-dev-server": "^3.10.1",
+		"worker-loader": "^2.0.0"
+	},
+	"scripts": {
+		"start": "webpack-dev-server"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@types/node": "^12.12.21",
+		"@types/react": "^16.4.14",
+		"@types/react-dom": "^16.0.7",
+		"@types/react-redux": "^6.0.2",
+		"@types/react-stripe-elements": "^1.1.10",
+		"@types/redux-form": "git+https://bitbucket.org/adversus-2/types-redux-form.git",
+		"query-string": "^6.8.3",
+		"react": "^16.4.0",
+		"react-dom": "^16.4.0",
+		"react-redux": "^5.0.7",
+		"react-router-dom": "^4.3.1",
+		"react-select": "^2.0.0",
+		"react-switch": "^3.0.4",
+		"react-table": "^6.8.6",
+		"redux": "^3.7.2",
+		"redux-form": "^7.4.2",
+		"redux-thunk": "2.2.0",
+		"sass-mq": "^5.0.0",
+		"styled-components": "^4.1.2",
+		"tslib": "^1.9.3"
+	}
+}
