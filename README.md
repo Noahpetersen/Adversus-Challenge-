@@ -174,6 +174,11 @@ and the 10 most recent sales should look as follows
 --- Bob - 12312 ---
 
 ### Getting started
-Open the `_frontend` folder in your favourite shell (e.g. Terminal, Command Promp, iTerm) and type in `gulp` and access the project at [http://localhost:8080](http://localhost:8080)
+## Installation
+1. Open the `_frontend` folder in your favourite shell (e.g. Terminal, Command Promp, iTerm)
+2. Run `npm install`
+
+## Firing up the challenge 
+1. Type in `gulp` in `_frontend` directory and access the project at [http://localhost:8080](http://localhost:8080)
 
 Happy coding!
