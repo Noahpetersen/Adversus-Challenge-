@@ -174,6 +174,6 @@ and the 10 most recent sales should look as follows
 --- Bob - 12312 ---
 
 ### Getting started
-Open the `_frontend` folder in your favourite shell (e.g. Terminal, Command Promp, iTerm) and type in `gulp`
+Open the `_frontend` folder in your favourite shell (e.g. Terminal, Command Promp, iTerm) and type in `gulp` and access the project at [http://localhost:80080](http://localhost:80080)
 
 Happy coding!
