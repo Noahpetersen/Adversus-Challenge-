@@ -21,7 +21,7 @@ module.exports = (env, argv) => {
 				...mode === 'development' && hotReload ?
 					[
 						'webpack/hot/only-dev-server',
-						'webpack-dev-server/client'
+						'webpack-dev-server/client?localhost'
 					]
 					: []
 			]
@@ -59,7 +59,7 @@ module.exports = (env, argv) => {
 			...base,
 			output: {
 				...base.output,
-				publicPath: 'localhost:8080'
+				publicPath: 'localhost'
 			},
 			plugins: [
 				...base.plugins,
@@ -68,10 +68,10 @@ module.exports = (env, argv) => {
 			devtool: 'source-map',
 			watch: true,
 			devServer: {
-				publicPath: 'localhost:8080',
+				contentBase: path.join(__dirname, '../'),
+				compress: true,
+				port: 8080,
 				hot: true,
-				public: 'localhost:8080',
-				inline: false,
 				headers: {
 					"Access-Control-Allow-Origin": "*",
 					"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
