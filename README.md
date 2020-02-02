@@ -173,3 +173,8 @@ and the 10 most recent sales should look as follows
 --- Alice - 123123 ---
 
 --- Bob - 12312 ---
+
+### Getting started
+Open the `_frontend` folder in your favourite shell (e.g. Terminal, Command Promp, iTerm) and type in `gulp`
+
+Happy coding!
