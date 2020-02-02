@@ -37,22 +37,3 @@ body {
 	display: flex;
 	height: 100%;
 }
-
-.button {
-  border: 1px solid $grey;
-  border-radius: 4rem;
-  color: $black;
-  cursor: pointer;
-  display: inline-block;
-  font-family: inherit;
-  font-size: 1.4rem;
-  font-variant: normal;
-  font-weight: 500;
-  line-height: 1.8;
-  padding: .5rem 2rem .7rem;
-  text-decoration: none;
-  vertical-align: baseline;
-  white-space: nowrap;
-  background-color: $grey;
-	outline: 0;
-}
