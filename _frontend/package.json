@@ -9,7 +9,7 @@
 		"@typescript-eslint/eslint-plugin": "^1.11.0",
 		"@typescript-eslint/parser": "^1.11.0",
 		"awesome-typescript-loader": "^5.2.1",
-		"eslint": "^6.0.1",
+		"eslint": "^6.8.0",
 		"eslint-plugin-react": "^7.14.2",
 		"gulp": "^3.9.1",
 		"gulp-livereload": "^3.8.1",

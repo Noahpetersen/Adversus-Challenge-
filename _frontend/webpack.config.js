@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const paths = {
-	root: path.join(__dirname, '../..'),
+	root: path.join(__dirname, '/..'),
 	scripts: path.join(__dirname, 'src/ts'),
 	styles: path.join(__dirname, 'src/scss')
 };
@@ -28,7 +28,7 @@ module.exports = (env, argv) => {
 		},
 		output: {
 			filename: "[name].bundle.js",
-			path: path.join(paths.root, 'dist/js')
+			path: path.join(paths.root, '/dist/js')
 		},
 		resolve: {
 			extensions: ['.js', '.json', '.ts', '.tsx']
@@ -59,7 +59,7 @@ module.exports = (env, argv) => {
 			...base,
 			output: {
 				...base.output,
-				publicPath: 'localhost:8888'
+				publicPath: 'localhost:8080'
 			},
 			plugins: [
 				...base.plugins,
@@ -68,9 +68,9 @@ module.exports = (env, argv) => {
 			devtool: 'source-map',
 			watch: true,
 			devServer: {
-				publicPath: 'localhost:8888',
+				publicPath: 'localhost:8080',
 				hot: true,
-				public: 'localhost:8888',
+				public: 'localhost:8080',
 				inline: false,
 				headers: {
 					"Access-Control-Allow-Origin": "*",
