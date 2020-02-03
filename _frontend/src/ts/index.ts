@@ -1,6 +1,5 @@
 import { DashboardApplication } from './components';
 import { render } from './render';
-import { store } from './store';
 
 // Render
 render(DashboardApplication);
