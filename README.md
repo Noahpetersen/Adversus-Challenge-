@@ -84,7 +84,7 @@ The requirements are as follows:
 
 - If multiple sales are received at more or less the same time, they should each be shown for 5 seconds in the order they are received
 
-  
+
 
 Examples:
 
@@ -115,22 +115,22 @@ Products:
 	type: 'product',
 	id: 1,
 	name: 'Cats and their secret hobbies',
-	unitPrice: 79.99
+	unitPrice: 79.95
 },{
 	type: 'product',
-	id: 1,
+	id: 2,
 	name: 'Cat psychology today',
-	unitPrice: 89.99
+	unitPrice: 89.95
 },{
 	type: 'product',
-	id: 1,
+	id: 3,
 	name: 'Curious tails and other novels',
-	unitPrice: 79.99
+	unitPrice: 79.95
 },{
 	type: 'product',
-	id: 1,
+	id: 4,
 	name: 'Culinary cooking for cats',
-	unitPrice: 69.99
+	unitPrice: 69.95
 }]
 ```
 
@@ -140,7 +140,7 @@ And then suppose we have received the following events:
 	type: 'sale',
 	userId: 1,
 	productId: 1,
-	duration: 3
+	duration: 3
 },{
 	type: 'sale',
 	userId: 2,
@@ -163,22 +163,28 @@ The top sales leaderboard should look as follows:
 
 ----------------------
 
---- Alice - 123123 ---
+--- Alice - 1319.25 ---
 
---- Bob - 12312 ---
+--- Bob - 479.7 ---
+
+--- Carl - 209.85 ---
 
 and the 10 most recent sales should look as follows
 
---- Alice - 123123 ---
+--- Alice - 239.85 ---
 
---- Bob - 12312 ---
+--- Bob - 539.70 ---
+
+--- Alice - 1079.40 ---
+
+--- Carl - 209.85 ---
 
 ## Getting started
 ### Installation
 1. Open the `_frontend` folder in your favourite shell (e.g. Terminal, Command Promp, iTerm)
 2. Run `npm install`
 
-### Firing up the challenge 
+### Firing up the challenge
 1. Type in `gulp` in `_frontend` directory and access the project at [http://localhost:8080](http://localhost:8080)
 
 Happy coding!

@@ -52,36 +52,36 @@ export const Products: Product[] = [
 		type: 'product',
 		id: 1,
 		name: 'Cats and their secret hobbies',
-		unitPrice: 79.99
+		unitPrice: 79.95
 	},
 	{
 		type: 'product',
 		id: 2,
 		name: 'Cat psychology today',
-		unitPrice: 89.99
+		unitPrice: 89.95
 	},
 	{
 		type: 'product',
 		id: 3,
 		name: 'Curious tails and other short stories',
-		unitPrice: 79.99
+		unitPrice: 79.95
 	},
 	{
 		type: 'product',
 		id: 4,
 		name: 'Culinary cooking for cats',
-		unitPrice: 39.99
+		unitPrice: 39.95
 	},
 	{
 		type: 'product',
 		id: 5,
 		name: 'The cat whisperer',
-		unitPrice: 49.99
+		unitPrice: 49.95
 	},
 	{
 		type: 'product',
 		id: 6,
 		name: 'Business cat insights - buying a boat',
-		unitPrice: 59.99
+		unitPrice: 59.95
 	}
 ]
