@@ -5,49 +5,55 @@
 	"repository": "/",
 	"main": "Gulpfile.js",
 	"devDependencies": {
-		"@types/webpack-env": "^1.13.6",
+		"@types/webpack-env": "^1.16.4",
 		"@typescript-eslint/eslint-plugin": "^1.11.0",
 		"@typescript-eslint/parser": "^1.11.0",
 		"awesome-typescript-loader": "^5.2.1",
 		"eslint": "^6.8.0",
-		"eslint-plugin-react": "^7.14.2",
+		"eslint-plugin-react": "^7.29.4",
 		"gulp": "^3.9.1",
 		"gulp-livereload": "^3.8.1",
 		"gulp-plumber": "^1.2.0",
-		"gulp-sass": "^4.0.1",
+		"gulp-sass": "^4.1.1",
 		"gulp-sourcemaps": "^2.6.4",
-		"typescript": "^3.7.3",
-		"webpack": "^4.41.5",
-		"webpack-cli": "^3.1.0",
-		"webpack-dev-server": "^3.10.1",
+		"typescript": "^3.9.10",
+		"webpack": "^4.46.0",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.3",
 		"worker-loader": "^2.0.0"
 	},
+	"overrides": {
+		"graceful-fs": "^4.2.9"
+	},
+	"resolutions": {
+		"graceful-fs": "^4.2.9"
+	},
 	"scripts": {
-		"start": "webpack-dev-server"
+		"preinstall": "npx npm-force-resolutions"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"@types/node": "^12.12.21",
-		"@types/react": "^16.4.14",
-		"@types/react-dom": "^16.0.7",
-		"@types/react-redux": "^6.0.2",
+		"@types/node": "^12.20.50",
+		"@types/react": "^16.14.25",
+		"@types/react-dom": "^16.9.15",
+		"@types/react-redux": "^6.0.20",
 		"@types/react-stripe-elements": "^1.1.10",
 		"@types/redux-form": "git+https://bitbucket.org/adversus-2/types-redux-form.git",
-		"query-string": "^6.8.3",
-		"react": "^16.4.0",
-		"react-dom": "^16.4.0",
+		"query-string": "^6.14.1",
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0",
 		"react-redux": "^5.0.7",
 		"react-router-dom": "^4.3.1",
 		"react-select": "^2.0.0",
 		"react-switch": "^3.0.4",
 		"react-table": "^6.8.6",
 		"redux": "^3.7.2",
-		"redux-form": "^7.4.2",
+		"redux-form": "^7.4.3",
 		"redux-thunk": "2.2.0",
 		"sass-mq": "^5.0.0",
 		"styled-components": "^4.1.2",
-		"tslib": "^1.9.3"
+		"tslib": "^1.14.1"
 	}
 }
