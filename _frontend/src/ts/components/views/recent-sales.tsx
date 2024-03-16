@@ -1,10 +1,7 @@
-import React from "react";
+import React from 'react';
 
-export class RecentSalesView extends React.Component<{}> {
-	
-	render() {
-		return (
-			''
-		)
-	}
+export const RecentSalesView = () => {
+	return (
+		''
+	)
 }

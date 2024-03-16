@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+// tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 // Dependencies
 @import "reset";
 @import "font-face";
@@ -8,10 +13,7 @@
 @import "mixins/mq";
 
 // App
-@import "table";
-@import "main";
 @import "sidebar";
-
 
 // Basic
 html {
@@ -32,9 +34,4 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
-}
-
-.app {
-	display: flex;
-	height: 100%;
 }

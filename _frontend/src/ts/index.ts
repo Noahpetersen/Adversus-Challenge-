@@ -1,14 +1,13 @@
-import { DashboardApplication } from './components';
-import { render } from './render';
+import DashboardApplication from './components';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
-// Render
-render(DashboardApplication);
+export function bootstrap() {
+	const root = createRoot(document.getElementById('root'));
 
-// HMR
-if (module && module.hot) {
-	console.log('Hot reloading is active')
-	module.hot.accept('./components', () => {
-		const Replacement = require('./components').DashboardApplication
-		render(Replacement);
-	})
+	root.render(
+		React.createElement(DashboardApplication)
+	)
 }
+
+bootstrap();

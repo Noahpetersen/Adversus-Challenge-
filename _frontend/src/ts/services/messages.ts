@@ -30,6 +30,10 @@ export class SalesEventHub {
 		this.observers.push(callback)
 	}
 
+	unregisterSalesEventListener(callback: SaleEventCallback) {
+		this.observers = this.observers.filter(e => e !== callback)
+	}
+
 	private dispatchEvent(msg: SalesEvent) {
 		this.observers.forEach(observer => observer(msg))
 	}

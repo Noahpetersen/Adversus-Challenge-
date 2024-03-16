@@ -1,42 +1,32 @@
-import React from "react";
-import Table from "react-table";
+import React from 'react';
+import Table from '../widgets/table';
+import { Card } from '../widgets/card';
 
-export class TopSalesView extends React.Component<{}> {
-	
-	render() {
-		const columns = [
-			{
-				Header: 'User',
-				accessor: 'user',
-			},{
-				Header: 'Value',
-				accessor: 'value'
-			}
-		];
-		
-		return (
-			<table className="table">
-				<thead>
-					<tr>
-						<th>User</th>
-						<th>Value</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Scratchy</td>
-						<td>1337</td>
-					</tr>
-					<tr>
-						<td>Felix</td>
-						<td>1337</td>
-					</tr>
-					<tr>
-						<td>Tomcat</td>
-						<td>1337</td>
-					</tr>
-				</tbody>
-			</table>
-		)
-	}
+export const TopSalesView = () => {
+	return (
+		<Card>
+			<Card.InsetBody>
+				<Table>
+					<Table.Headers>
+						<Table.Header>User</Table.Header>
+						<Table.Header>Value</Table.Header>
+					</Table.Headers>
+					<Table.Body>
+						<Table.Row>
+							<Table.Cell>Scratchy</Table.Cell>
+							<Table.Cell>1337</Table.Cell>
+						</Table.Row>
+						<Table.Row>
+							<Table.Cell>Felix</Table.Cell>
+							<Table.Cell>1337</Table.Cell>
+						</Table.Row>
+						<Table.Row>
+							<Table.Cell>Tomcat</Table.Cell>
+							<Table.Cell>1337</Table.Cell>
+						</Table.Row>
+					</Table.Body>
+				</Table>
+			</Card.InsetBody>
+		</Card>
+	)
 }

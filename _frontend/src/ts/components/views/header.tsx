@@ -1,16 +1,13 @@
-import React from "react";
+import React from 'react';
 
 interface Props {
 
 }
 
-export class Header extends React.Component<Props> {
-	
-	render() {
-		return (
-			<div className="main__header">
-				<h1>Sales Dashboard</h1>
-			</div>
-		)
-	}
+export const Header = ({ }: Props) => {
+	return (
+		<div className="flex items-center justify-between mb-4">
+			<h1 className="text-2xl">Sales Dashboard</h1>
+		</div>
+	)
 }

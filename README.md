@@ -26,10 +26,12 @@ class SalesEventListener {
 
 	// Register a callback function taking one argument (i.e. the event)
 	registerSalesEventListener(callback);
+	// Unregister a callback
+	unregisterSalesEventListener(callback);
 }
 ```
 
-The salesEventListener function will receive events which has the following form
+The salesEventListener callback will receive events which has the following form
 ```javascript
 {
 	type: 'sale', // this is the only type of event we're concerned with
@@ -65,6 +67,8 @@ and a product object has the following form
 	unitPrice: 79.99 // the cost for one months subscription
 }
 ```
+
+The SalesEventHub and EntityStore services are made available to the dashboard view as a react context.
 
 The requirements are as follows:
 
@@ -185,6 +189,6 @@ and the 10 most recent sales should look as follows
 2. Run `npm install`
 
 ### Firing up the challenge
-1. Type in `gulp` in `_frontend` directory and access the project at [http://localhost:8080](http://localhost:8080)
+1. Type in `npx vite` in `_frontend` directory and access the project at [http://localhost:8080](http://localhost:8080)
 
 Happy coding!
