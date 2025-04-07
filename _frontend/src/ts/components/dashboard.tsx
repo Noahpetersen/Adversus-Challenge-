@@ -26,7 +26,7 @@ interface CompleteSale {
 export const DashBoardView = () => {
 	const { hub, store } = useContext(SalesConnnectorContext)
 
-	const [mode, setMode] = useState<'top' | 'recent'>('recent');
+	const [mode, setMode] = useState<'top' | 'recent'>('top');
 	const [splash, setSplash] = useState<boolean>(true);
 	const [sales, setSales] = useState<CompleteSale[]>([]);
 
@@ -58,10 +58,10 @@ export const DashBoardView = () => {
 	return (
 		<>
 			<div className="flex-auto p-5">
-				<Header />
+				<Header mode={mode}/>
 				{mode === 'recent' ?
 					<RecentSalesView sales={sales.slice(0, 10)} />
-					: <TopSalesView />
+					: <TopSalesView sales={sales}/>
 				}	
 
 				{splash &&

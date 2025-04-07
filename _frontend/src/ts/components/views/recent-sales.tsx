@@ -6,7 +6,7 @@ interface RecentSalesViewProps {
 	sales: any[];
 }
 
-export const RecentSalesView: React.FC<RecentSalesViewProps> = ({ sales }) => {
+export const RecentSalesView = ({ sales }: RecentSalesViewProps) => {
 
 	return (
 		<Card>
