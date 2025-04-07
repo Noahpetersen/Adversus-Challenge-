@@ -1,23 +1,54 @@
-import React from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { RecentSalesView } from './views/recent-sales';
 import { TopSalesView } from './views/top-sales';
 import { SplashModal } from './widgets/splash-modal';
 import { Header } from './views/header';
 import { SalesConnnectorContext } from '../context/sales-connector';
+import React from 'react';
+
+interface CompleteSale {
+	timestamp: number;
+	user: {
+		type: string;
+		id: number;
+		name: string;
+	};
+	product: {
+		type: string;
+		id: number;
+		name: string;
+		unitPrice: number;
+	};
+	months: number;
+	value: number;
+}
 
 export const DashBoardView = () => {
-	const { hub, store } = React.useContext(SalesConnnectorContext)
+	const { hub, store } = useContext(SalesConnnectorContext)
 
-	const [mode, setMode] = React.useState<'top' | 'recent'>('top');
-	const [splash, setSplash] = React.useState<boolean>(true);
+	const [mode, setMode] = useState<'top' | 'recent'>('recent');
+	const [splash, setSplash] = useState<boolean>(true);
+	const [sales, setSales] = useState<CompleteSale[]>([]);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		// initialize callback
 		const cb = async (e) => {
 			let user = await store.getUser(e.userId)
 			let product = await store.getProduct(e.productId)
+			const value = product.unitPrice * e.duration;
 
-			console.log('User', user.name, 'sold', product.name, 'with subscription length', e.duration)
+			console.log('User', user.name, 'sold', product, 'with subscription length', e.duration, value)
+
+			const completeSale: CompleteSale = {
+				timestamp: Date.now(),
+				user,
+				product,
+				months: e.duration,
+				value
+			};
+
+			setSales(prev => [completeSale, ...prev]);
+
 		}
 
 		hub.registerSalesEventListener(cb)
@@ -29,9 +60,9 @@ export const DashBoardView = () => {
 			<div className="flex-auto p-5">
 				<Header />
 				{mode === 'recent' ?
-					<RecentSalesView />
+					<RecentSalesView sales={sales.slice(0, 10)} />
 					: <TopSalesView />
-				}
+				}	
 
 				{splash &&
 					<SplashModal />
