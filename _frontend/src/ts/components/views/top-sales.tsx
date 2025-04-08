@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import Table from '../widgets/table';
 import { Card } from '../widgets/card';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../state/store';
 
-interface Sale {
-	user: {
-		id: number;
-		name: string;
-	};
-	value: number;
-}
 
-interface TopSalesViewProps {
-	sales: Sale[];
-}
-
-export const TopSalesView = ({ sales }: TopSalesViewProps) => {
-	const [topSales, setTopSales] = useState<{ user: string; total: number }[]>([]);
+export const TopSalesView = () => {
+	const sales = useSelector((state: RootState) => state.sales.sales);
+	const [topSellers, setTopSellers] = useState<{ user: string; total: number }[]>([]);
 
 	useEffect(() => {
+		const topSellers = computeTopSellers();
+
+		setTopSellers(topSellers);
+	}, [sales]);
+
+	const computeTopSellers = () => {
 		const totalsMap = new Map<string, number>();
 
 		sales.forEach((sale) => {
@@ -29,9 +27,9 @@ export const TopSalesView = ({ sales }: TopSalesViewProps) => {
 			.map(([user, total]) => ({ user, total }))
 			.sort((a, b) => b.total - a.total)
 			.slice(0, 10);
-
-		setTopSales(top);
-	}, [sales]);
+		
+		return top;
+	}
 
 	return (
 		<Card>
@@ -42,7 +40,7 @@ export const TopSalesView = ({ sales }: TopSalesViewProps) => {
 						<Table.Header>Total Value</Table.Header>
 					</Table.Headers>
 					<Table.Body>
-						{topSales.map((entry, index) => (
+						{topSellers.map((entry, index) => (
 							<Table.Row key={index}>
 								<Table.Cell>{entry.user}</Table.Cell>
 								<Table.Cell>{entry.total.toFixed(2)} DKK</Table.Cell>

@@ -6,7 +6,6 @@ import { Header } from './views/header';
 import { SalesConnnectorContext } from '../context/sales-connector';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../state/store';
 import { addSale } from '../state/sales/salesSlice';
 
 interface CompleteSale {
@@ -29,9 +28,9 @@ interface CompleteSale {
 export const DashBoardView = () => {
 	const { hub, store } = useContext(SalesConnnectorContext)
 
-	const [mode, setMode] = useState<'top' | 'recent'>('recent');
+	const [mode, setMode] = useState<'top' | 'recent'>('top');
 	const [splash, setSplash] = useState<boolean>(true);
-	const [sales, setSales] = useState<CompleteSale[]>([]);
+
 	const dispatch = useDispatch();
 
 
@@ -53,9 +52,6 @@ export const DashBoardView = () => {
 			};
 
 			dispatch(addSale(completeSale));
-
-			setSales(prev => [completeSale, ...prev]);
-
 		}
 
 		hub.registerSalesEventListener(cb)
@@ -68,7 +64,7 @@ export const DashBoardView = () => {
 				<Header mode={mode}/>
 				{mode === 'recent' ?
 					<RecentSalesView/>
-					: <TopSalesView sales={sales}/>
+					: <TopSalesView/>
 				}	
 
 				{splash &&
