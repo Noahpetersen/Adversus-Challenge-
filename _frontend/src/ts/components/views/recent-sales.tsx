@@ -1,12 +1,15 @@
 import React from 'react';
 import { Card } from '../widgets/card';
 import Table from '../widgets/table';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../state/store';
 
-interface RecentSalesViewProps {
-	sales: any[];
-}
-
-export const RecentSalesView = ({ sales }: RecentSalesViewProps) => {
+export const RecentSalesView = () => {
+	const recentSales = useSelector((state: RootState) => 
+        [...state.sales.sales]
+            .sort((a, b) => b.timestamp - a.timestamp)
+            .slice(0, 10) 
+    );
 
 	return (
 		<Card>
@@ -18,8 +21,8 @@ export const RecentSalesView = ({ sales }: RecentSalesViewProps) => {
 						<Table.Header>Value</Table.Header>
 					</Table.Headers>
 					<Table.Body>
-						{sales.length > 0 ? (
-							sales.map((sale, index) => (
+						{recentSales.length > 0 ? (
+							recentSales.map((sale, index) => (
 								<Table.Row key={index}>
 									<Table.Cell>{sale.user.name}</Table.Cell>
 									<Table.Cell>{sale.product.name}</Table.Cell>

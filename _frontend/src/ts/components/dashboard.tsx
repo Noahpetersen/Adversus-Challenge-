@@ -5,6 +5,9 @@ import { SplashModal } from './widgets/splash-modal';
 import { Header } from './views/header';
 import { SalesConnnectorContext } from '../context/sales-connector';
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../state/store';
+import { addSale } from '../state/sales/salesSlice';
 
 interface CompleteSale {
 	timestamp: number;
@@ -26,9 +29,11 @@ interface CompleteSale {
 export const DashBoardView = () => {
 	const { hub, store } = useContext(SalesConnnectorContext)
 
-	const [mode, setMode] = useState<'top' | 'recent'>('top');
+	const [mode, setMode] = useState<'top' | 'recent'>('recent');
 	const [splash, setSplash] = useState<boolean>(true);
 	const [sales, setSales] = useState<CompleteSale[]>([]);
+	const dispatch = useDispatch();
+
 
 	useEffect(() => {
 		// initialize callback
@@ -47,6 +52,8 @@ export const DashBoardView = () => {
 				value
 			};
 
+			dispatch(addSale(completeSale));
+
 			setSales(prev => [completeSale, ...prev]);
 
 		}
@@ -60,7 +67,7 @@ export const DashBoardView = () => {
 			<div className="flex-auto p-5">
 				<Header mode={mode}/>
 				{mode === 'recent' ?
-					<RecentSalesView sales={sales.slice(0, 10)} />
+					<RecentSalesView/>
 					: <TopSalesView sales={sales}/>
 				}	
 
