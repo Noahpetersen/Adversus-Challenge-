@@ -33,7 +33,6 @@ export const DashBoardView = () => {
 
 	const dispatch = useDispatch();
 
-
 	useEffect(() => {
 		// initialize callback
 		const cb = async (e) => {
@@ -57,6 +56,15 @@ export const DashBoardView = () => {
 		hub.registerSalesEventListener(cb)
 		return () => hub.unregisterSalesEventListener(cb)
 	}, []);
+
+	useEffect(() => {
+		const timeoutId: ReturnType<typeof setTimeout> =
+		  mode === 'recent'
+			? setTimeout(() => setMode('top'), 30_000)
+			: setTimeout(() => setMode('recent'), 60_000);
+	  
+		return () => clearTimeout(timeoutId);
+	}, [mode]);
 
 	return (
 		<>
