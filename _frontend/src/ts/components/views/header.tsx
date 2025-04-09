@@ -7,7 +7,7 @@ interface Props {
 export const Header = ({ mode }: Props) => {
 	return (
 		<div className="flex items-center justify-between mb-4">
-			<h1 className="text-2xl">{mode === 'top' ? "Top Sales" : "Recent Sales"}</h1>
+			<h1 className="text-2xl">{mode === 'top' ? "Top Sellers" : "Recent Sales"}</h1>
 		</div>
 	)
 }
